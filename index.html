@@ -241,6 +241,8 @@
   .seal.broken .half.a { transform: translate(-70px, 30px) rotate(-28deg); opacity: 0; }
   .seal.broken .half.b { transform: translate(70px, 36px) rotate(26deg); opacity: 0; }
   .hint { font-size: .72rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-1); animation: pulse 2.4s ease-in-out infinite; }
+  .hint .cta { display: flex; align-items: center; justify-content: center; gap: .4rem; margin-bottom: .45rem; font-family: var(--f-display); font-size: 1.35rem; font-weight: 500; letter-spacing: .04em; text-transform: none; color: var(--gold-hi); }
+  .hint .hand { display: inline-block; font-size: 1.5rem; animation: point 1.2s ease-in-out infinite; }
   .hint small { display: block; margin-top: .45rem; letter-spacing: .12em; font-weight: 400; color: var(--muted); text-transform: none; font-size: .78rem; }
 
   @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
@@ -255,6 +257,7 @@
   @keyframes eq { 0%, 100% { height: 25%; } 50% { height: 100%; } }
   @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
   @keyframes shake { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-6deg) scale(1.04); } 50% { transform: rotate(5deg) scale(1.06); } 75% { transform: rotate(-3deg) scale(1.04); } }
+  @keyframes point { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
   @keyframes pulse { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
 
   @media (max-height: 640px) { .lead { display: none; } }
@@ -268,12 +271,12 @@
 <canvas id="dust" aria-hidden="true"></canvas>
 <canvas id="fx" aria-hidden="true"></canvas>
 
-<audio id="recite" preload="auto" loop src="assets/an-nur-24-32-husary.mp3"></audio>
+<audio id="recite" preload="auto" loop src="assets/ar-rum-30-21-husary.mp3"></audio>
 
 <button class="sound" id="sound" type="button" aria-label="Couper ou relancer la récitation">
   <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
   <svg class="play" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5v9l8-4.5z" fill="currentColor"/></svg>
-  An-Nûr · 24:32
+  Ar-Rûm · 30:21
 </button>
 
 <!-- ---------- Ouverture ---------- -->
@@ -282,15 +285,15 @@
   <div class="curtain r"></div>
   <div class="gate-inner">
     <p class="bism gold-text" lang="ar">بسم الله الرحمن الرحيم</p>
-    <p class="ayah gold-text" lang="ar" dir="rtl">وَأَنكِحُوا۟ ٱلْأَيَـٰمَىٰ مِنكُمْ وَٱلصَّـٰلِحِينَ مِنْ عِبَادِكُمْ وَإِمَآئِكُمْ ۚ إِن يَكُونُوا۟ فُقَرَآءَ يُغْنِهِمُ ٱللَّهُ مِن فَضْلِهِۦ ۗ وَٱللَّهُ وَٰسِعٌ عَلِيمٌ</p>
-    <p class="ayah-fr">« Mariez les célibataires d’entre vous, ainsi que les gens de bien parmi vos serviteurs et vos servantes. S’ils sont pauvres, Allah les enrichira de Sa grâce. Allah est Immense et Omniscient. »</p>
-    <span class="ref">Sourate An-Nûr · verset 32</span>
+    <p class="ayah gold-text" lang="ar" dir="rtl">وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ لَءَايَٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+    <p class="ayah-fr">« Parmi Ses signes, Il vous a créé, issues de vous-mêmes, des épouses, afin que vous trouviez auprès d’elles la sérénité ; et Il a placé entre vous l’amour et la miséricorde. Il y a vraiment là des signes pour ceux qui réfléchissent. »</p>
+    <span class="ref">Sourate Ar-Rûm · verset 21</span>
 
     <button class="seal" id="seal" type="button" aria-label="Briser le sceau et ouvrir le faire-part">
       <span class="half a"><svg viewBox="-70 -70 140 140" aria-hidden="true"><use href="#sealArt"/></svg></span>
       <span class="half b"><svg viewBox="-70 -70 140 140" aria-hidden="true"><use href="#sealArt"/></svg></span>
     </button>
-    <span class="hint">Touchez le sceau<small>Montez le son pour écouter la récitation</small></span>
+    <span class="hint"><span class="cta">Cliquer ici<span class="hand" aria-hidden="true">👆🏾</span></span>Pour les informations<small>Montez le son pour écouter la récitation</small></span>
   </div>
 </div>
 
@@ -371,7 +374,7 @@
     </svg>
   </h1>
 
-  <p class="names reveal" style="--d:2.1s"><span class="gold-text">M. <em>&amp;</em> Mme Diop</span></p>
+  <p class="names reveal" style="--d:2.1s"><span class="gold-text">Mouhamed <em>&amp;</em> Astou</span></p>
 
   <p class="lead reveal" style="--d:2.3s">C’est avec un grand plaisir que je vous annonce <strong>mon mariage religieux</strong>.</p>
 
