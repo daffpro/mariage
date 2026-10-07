@@ -101,6 +101,11 @@
     animation-delay: calc(1.1s + var(--i) * .17s), calc(1.9s + var(--i) * .17s);
   }
 
+  .names { display: flex; align-items: center; justify-content: center; gap: .9rem; width: 100%; margin-top: calc(var(--gap) * -.6); }
+  .names::before, .names::after { content: ""; flex: 0 1 4rem; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-line)); }
+  .names::after { transform: scaleX(-1); }
+  .names span { font-family: var(--f-display); font-size: clamp(1.25rem, 3.6vh, 2.1rem); line-height: 1.1; white-space: nowrap; }
+  .names em { font-style: italic; }
   .lead { margin: 0; max-width: 24rem; font-size: clamp(.8rem, 1.9vh, .98rem); line-height: 1.5; color: var(--muted); text-wrap: balance; }
   .lead strong { color: var(--ivory); font-weight: 500; }
 
@@ -263,7 +268,7 @@
 <canvas id="dust" aria-hidden="true"></canvas>
 <canvas id="fx" aria-hidden="true"></canvas>
 
-<audio id="recite" preload="auto" src="assets/an-nur-24-32-husary.mp3"></audio>
+<audio id="recite" preload="auto" loop src="assets/an-nur-24-32-husary.mp3"></audio>
 
 <button class="sound" id="sound" type="button" aria-label="Couper ou relancer la récitation">
   <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -366,7 +371,9 @@
     </svg>
   </h1>
 
-  <p class="lead reveal" style="--d:2.2s">C’est avec un grand plaisir que je vous annonce <strong>mon mariage religieux</strong>.</p>
+  <p class="names reveal" style="--d:2.1s"><span class="gold-text">M. <em>&amp;</em> Mme Diop</span></p>
+
+  <p class="lead reveal" style="--d:2.3s">C’est avec un grand plaisir que je vous annonce <strong>mon mariage religieux</strong>.</p>
 
   <section class="countdown reveal" id="countdown" style="--d:2.5s" aria-label="Compte à rebours jusqu'à la cérémonie">
     <span class="label">Le grand jour arrive dans</span>
@@ -722,6 +729,7 @@
   /* ---------- Récitation ---------- */
   var audio = document.getElementById('recite');
   var soundBtn = document.getElementById('sound');
+  // La récitation tourne en boucle : la voix ne s'arrête que si l'invité coupe le son.
   function syncSound() { soundBtn.classList.toggle('playing', !audio.paused && !audio.ended); }
   ['play', 'pause', 'ended'].forEach(function (ev) { audio.addEventListener(ev, syncSound); });
   function fadeIn() {

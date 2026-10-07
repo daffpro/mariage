@@ -1,10 +1,10 @@
 # Takk Djakk — 11 octobre 2026
 
-Faire-part animé du mariage religieux, dimanche 11 octobre 2026 à 16h45, mosquée de Khar Yallah.
+Faire-part animé du mariage religieux de M. & Mme Diop, dimanche 11 octobre 2026 à 16h45, mosquée de Khar Yallah.
 
 Page unique et statique, qui tient sur un seul écran :
 - ouverture : sceau d'or à briser, rideaux qui s'écartent, verset An-Nûr 24:32 ;
-- récitation d'Al-Husary (`assets/an-nur-24-32-husary.mp3`, source everyayah.com), lancée à l'ouverture ;
+- récitation d'Al-Husary (`assets/an-nur-24-32-husary.mp3`, source everyayah.com), lancée à l'ouverture et jouée en boucle ;
 - alliances en or 3D (three.js), calligraphie « Takk Djakk » écrite à l'or ;
 - compte à rebours jusqu'à 16h45 (heure de Dakar), étincelles d'or au toucher.
 
